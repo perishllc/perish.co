@@ -1,0 +1,8 @@
+.DS_Store
+Thumbs.db
+.aleph/
+dist/
+pippin_seed.txt
+node_modules/
+*.zip
+.env

@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>hCaptcha</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
+  </head>
+  <body style="background-color: #ff9966">
+    <div style="height: 60px"></div>
+    <div style="display: flex; justify-content: center; flex-direction: column;">
+      <form action="?" method="POST" style="display: flex; justify-content: center;">
+        <div
+          style="transform: scale(1)"
+          class="h-captcha"
+          data-sitekey="cac707e7-c1fb-4336-afc4-e5b282f20daa"
+          data-size="normal"
+          data-callback="captchaCallback"
+          data-theme="dark"
+        ></div>
+      </form>
+      <div style="height: 60px"></div>
+      <button onclick="closeWindow()" class="self-center w-[300px] bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+        Close
+      </button>
+    </div>
+    <script>
+      function captchaCallback(response) {
+        if (typeof Captcha !== 'undefined') {
+          Captcha.postMessage(response)
+        }
+      }
+      function closeWindow() {
+        if (typeof CloseWebView !== 'undefined') {
+          CloseWebView.postMessage('')
+        }
+      }
+    </script>
+  </body>
+</html>

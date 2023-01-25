@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 131.25 131.25" height="75" width="75" y="266.665" x="103" preserveAspectRatio="xMinYMin" style="overflow: visible;">
+	<linearGradient id="Sfumatura_senza_nome_7" x1="90.23" y1="145.92" x2="103.56" y2="61.23" gradientTransform="translate(-4.15 -2.46)" gradientUnits="userSpaceOnUse" style="">
+		<stop offset="0" stop-color="#ffc166"></stop>
+		<stop offset="1" stop-color="#f96"></stop>
+	</linearGradient>
+	<linearGradient id="Sfumatura_senza_nome_35" x1="2064.74" y1="-3799.49" x2="2165.6" y2="-3931.16" gradientTransform="translate(-4147.85 1272.52) rotate(45)" gradientUnits="userSpaceOnUse" style="">
+		<stop offset="0" stop-color="#5858e8"></stop>
+		<stop offset="1" stop-color="#9b5efc"></stop>
+	</linearGradient>
+	<linearGradient id="Sfumatura_senza_nome_13" x1="1.47" y1="135.05" x2="50.72" y2="77.08" gradientUnits="userSpaceOnUse" style="">
+		<stop offset="0" stop-color="#ff7854"></stop>
+		<stop offset="1" stop-color="#fd267d"></stop>
+	</linearGradient>
+	<polygon id="Livello_1-2" dataName="Livello 1" class="cls-1" points="131.25 65.9 65.9 131.25 65.83 62.73 131.23 65.35 131.25 65.9" style="fill: url(#Sfumatura_senza_nome_7);"></polygon>
+	<polygon id="Livello_1-2" dataName="Livello 1" class="cls-2" points="131.23 65.35 68.2 65.35 0 65.35 65.35 0 131.18 0.07 131.23 65.35" style="fill: url(#Sfumatura_senza_nome_35);"></polygon>
+	<polygon id="Livello_1-2" dataName="Livello 1" class="cls-3" points="48.32 117.14 2.76 128.49 14.11 82.94 48.32 82.94 48.32 117.14" style="fill: url(#Sfumatura_senza_nome_13);"></polygon>
+</svg>
