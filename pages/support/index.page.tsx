@@ -47,12 +47,32 @@ function Page() {
       return;
     }
 
+    const res = await fetch("/api/sendgrid", {
+      body: JSON.stringify({
+        email: email,
+        fullname: fullname,
+        subject: subject,
+        message: message,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    });
+
+    const { error } = await res.json();
+    if (error) {
+      console.log(error);
+      return;
+    }
+    console.log(fullname, email, subject, message);
+
   };
 
   return (
     <div className="page bg-white dark:bg-gray-800 text-black dark:text-white w-full min-h-screen">
       <Nav />
-      <form onSubmit={handleSubmit} className="relative bg-white text-black">
+      <div className="relative bg-white text-black">
         <div className="absolute inset-0">
           <div className="absolute inset-y-0 left-0 w-1/2 bg-gray-50" />
         </div>
@@ -83,7 +103,7 @@ function Page() {
           </div>
           <div className="bg-white py-16 px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
             <div className="mx-auto max-w-lg lg:max-w-none">
-              <form action="#" method="POST" className="grid grid-cols-1 gap-y-6">
+              <form onSubmit={(e) => e.preventDefault()} className="grid grid-cols-1 gap-y-6">
                 <div>
                   <label htmlFor="full-name" className="sr-only">
                     Full name
@@ -119,16 +139,20 @@ function Page() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="phone" className="sr-only">
-                    Phone
+                  <label htmlFor="subject" className="sr-only">
+                    Subject
                   </label>
                   <input
                     type="text"
-                    name="phone"
-                    id="phone"
+                    name="subject"
+                    id="subject"
                     autoComplete="tel"
                     className="block w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                    placeholder="Phone"
+                    placeholder="Subject"
+                    value={subject}
+                    onChange={(e) => {
+                      setSubject(e.target.value);
+                    }}
                   />
                 </div>
                 <div>
@@ -141,7 +165,6 @@ function Page() {
                     rows={4}
                     className="block w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                     placeholder="Message"
-                    defaultValue={''}
                     value={message}
                     onChange={(e) => {
                       setMessage(e.target.value);
@@ -150,7 +173,7 @@ function Page() {
                 </div>
                 <div>
                   <button
-                    type="submit"
+                    onClick={handleSubmit}
                     className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-6 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                   >
                     Submit
@@ -160,7 +183,7 @@ function Page() {
             </div>
           </div>
         </div>
-      </form>
+      </div>
       <Footer />
     </div>
   );
