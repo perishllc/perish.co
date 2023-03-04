@@ -1,2 +1,0 @@
-perish.co chat.perish.co meta.perish.co auth.perish.co
-
